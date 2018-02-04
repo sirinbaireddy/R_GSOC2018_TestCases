@@ -1,10 +1,7 @@
 **Assignment:** The assigned task is to use glmnet to compute a L1-regularized linear model of the spam data in the  library "ElemStatLearn". 
 Then I add what features are selected for the prediction function.
 
-* Item 1
-* Item 2
-  * Item 2a
-  * Item 2b
+
 
 The first step was importing the data from the internet to a dataset I can edit with R. 
 I did this by accessing the UCI Machine Learning Repository (https://archive.ics.uci.edu/ml/machine-learning-databases/spambase/)
@@ -13,9 +10,10 @@ I downloaded the data set with
 > View(dataSet)
 
 Then installed glmnet
+'''
 > install.packages("glmnet", repos = "http://cran.us.r-project.org")
 also installing the dependencies ‘iterators’, ‘foreach’
-
+'''
 trying URL 'http://cran.us.r-project.org/bin/macosx/mavericks/contrib/3.3/iterators_1.0.9.tgz'
 Content type 'application/x-gzip' length 309783 bytes (302 KB)
 ==================================================
