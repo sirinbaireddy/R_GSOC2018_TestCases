@@ -1,3 +1,5 @@
+** Background
+
 **Assignment:** The assigned task is to use glmnet to compute a L1-regularized linear model of the spam data in the  library "ElemStatLearn". 
 Then I add what features are selected for the prediction function.
 
