@@ -17,4 +17,4 @@ Loading required package: Matrix
 Loading required package: foreach
 Loaded glmnet 2.0-13
 ```
-
+Before going into the commands of what I did, I will briefly explain the data. 
