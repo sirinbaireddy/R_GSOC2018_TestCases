@@ -17,4 +17,6 @@ Loading required package: Matrix
 Loading required package: foreach
 Loaded glmnet 2.0-13
 ```
-Before going into the commands of what I did, I will briefly explain the data. 
+Before going into the commands of what I did, I will briefly explain the data. There are 58 distinct columns in the dataset, 57 of them measuring frequencies of various characters and words. 45 of those 57 columns measure the percentage of words in the email matching a specific word. Six of them measure the percentage of a certain character appearing. The remaining three of those 57 columns measure the average word length, longest word, and total number capital letters in each email. The 58th and last column of the dataset is a categorical variable having each email recorded as "Spam" or "Not Spam". If the email was spam, the email was recorded as a 1. If the email was not spam, it was recorded as a 0. There are 4601 distinct emails in this dataset, with approximately a third of the emails being spam.
+
+
