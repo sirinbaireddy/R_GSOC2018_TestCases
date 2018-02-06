@@ -48,6 +48,49 @@ Unfortunately, when I imported the data set from the repository all of the colum
 > isSpam = as.matrix(dataSet$X1) 
 ```
 
+**Prediction Model:**
+Now that we have all of our variables entered we can move on to the model. The prompt asked us to do a l1 regression model, so we choose a lasso regression with an alpha equal to 1. Since our response variable isSpam is a categorical variable with 0s and 1s, we use a binomial model.
+```R
+> glmod <- glmnet(xfactors,y= as.factor(isSpam),alpha = 1, family = "binomial")
+> glmod
+  Df      %Dev    Lambda
+ [1,]  0 4.935e-14 0.1582000
+ [2,]  1 1.309e-02 0.1441000
+ [3,]  1 2.575e-02 0.1313000
+ [4,]  3 4.682e-02 0.1197000
+ [5,]  3 7.179e-02 0.1090000
+ [6,]  4 9.602e-02 0.0993500
+ [7,]  6 1.206e-01 0.0905300
+ [8,]  6 1.446e-01 0.0824900
+ [9,]  6 1.662e-01 0.0751600
+[10,]  7 1.867e-01 0.0684800
+[11,]  7 2.051e-01 0.0624000
+[12,]  7 2.218e-01 0.0568500
+[13,]  7 2.369e-01 0.0518000
+[14,]  7 2.506e-01 0.0472000
+[15,]  7 2.629e-01 0.0430100
+[16,]  7 2.740e-01 0.0391900
+[17,]  8 2.844e-01 0.0357100
+[18,]  8 2.937e-01 0.0325300
+[19,]  8 3.020e-01 0.0296400
+....
+[70,]  8 3.660e-01 0.0002578
+[71,]  8 3.660e-01 0.0002349
+[72,]  8 3.660e-01 0.0002141
+[73,]  8 3.660e-01 0.0001950
+```
+I also plotted the variable coefficients versus the shrinking lambda.
+```R
+> plot(glmod, xvar="lambda")
+```
+I then displayed the coefficients and their intercepts
+```R
+> coef(glmod)[, 10]
+(Intercept)       order        mail     recieve        free    business      credit       money 
+ -0.8003488   0.2253186   0.0000000   0.4230139   0.3252347   0.3720801   0.0306762   0.1554286 
+ dollarsign 
+  2.4596797 
+```
 
 
 
