@@ -42,11 +42,13 @@ Unfortunately, when I imported the data set from the repository all of the colum
 > credit = as.matrix(dataSet$X0.12)
 > money = as.matrix(dataSet$X0.15)
 > dollarsign = as.matrix(dataSet$X0.44)
+> xfactors = as.matrix(data.frame(order, mail, recieve, free, business, credit, money, dollarsign))
+# the next variable isSpam is the response variable that has a 1 for spam and 0 for not spam
+# it is not a predicting factor for the model
+> isSpam = as.matrix(dataSet$X1) 
 ```
 
-The next thing I did was set the seed. The reason for this is because I'll be working with predicition models and setting the seed will help with getting reproducible results.
-```R
-> set.seed(100)
-```
+
+
 
 
