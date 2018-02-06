@@ -23,4 +23,9 @@ The first thing I did was set the seed. The reason for this is because I'll be w
 ```R
 > set.seed(100)
 ```
+The next thing I did was assign X and Y as matrices to be used for the glmnet function. I initially made the mistake of directly putting the columns in the function, before realizing that glmnet needs matrices as variables to work. The X variable is the first 57 columns which as mentioned earlier, discuss the varying frequencies of certain words and characters. The Y variable is the last vector of the column which says whether each email is considered spam or not spam.
+```R
+> X <- data.matrix(dataSet[1:57])
+> Y <- data.matrix(dataSet[58])
+```
 
