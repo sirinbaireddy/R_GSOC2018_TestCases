@@ -32,6 +32,19 @@ Loaded glmnet 2.0-13
 * frequency of word "money" -
 * frequency of char "$" -
 
+Unfortunately, when I imported the data set from the repository all of the column names were numeric and unordered so I converted the ones I wanted to easier variable names to work with.
+```R
+> order = as.matrix(dataSet$X0.5)
+> mail = as.matrix(dataSet$0.6)
+Error: unexpected numeric constant in "mail = as.matrix(dataSet$0.6"
+> mail = as.matrix(dataSet$X0.6)
+> recieve = as.matrix(dataSet$X0.7)
+> free = as.matrix(dataSet$X0.32.1)
+> business = as.matrix(dataSet$X0.11)
+> credit = as.matrix(dataSet$X0.12)
+> money = as.matrix(dataSet$X0.15)
+> dollarsign = as.matrix(dataSet$X0.44)
+```
 
 The next thing I did was set the seed. The reason for this is because I'll be working with predicition models and setting the seed will help with getting reproducible results.
 ```R
