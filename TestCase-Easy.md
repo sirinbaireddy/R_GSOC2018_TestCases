@@ -82,7 +82,7 @@ Now that we have all of our variables entered we can move on to the model. The p
 I also plotted the variable coefficients versus the shrinking lambda.
 ```R
 > plot(glmod, xvar="lambda")
-
+![gsoc_easy_1](https://user-images.githubusercontent.com/35353108/35841440-dc27c334-0ab0-11e8-8ef9-5b19ed8e5834.jpeg)
 ```
 I then displayed the coefficients and their intercepts
 ```R
