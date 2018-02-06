@@ -3,7 +3,7 @@
 
 **My Answer:** 
 
-**Importing the DataSe and glmnet:** The first step was importing the data from the internet to a dataset I can edit with R. 
+**Importing the DataSet and glmnet:** The first step was importing the data from the internet to a dataset I can edit with R. 
 I did this by accessing the UCI Machine Learning Repository (https://archive.ics.uci.edu/ml/machine-learning-databases/spambase/). I first downloaded the required files, then I imported the data set with the command
 ```R
 > dataSet <- read.table(file.choose(), header = T, sep = ",")
@@ -23,20 +23,18 @@ Loaded glmnet 2.0-13
 **Data Explanation:** Before going into the commands of what I did, I will briefly explain the data. There are 58 distinct columns in the dataset, 57 of them measuring frequencies of various characters and words. 45 of those 57 columns measure the percentage of words in the email matching a specific word. Six of them measure the percentage of a certain character appearing. The remaining three of those 57 columns measure the average word length, longest word, and total number capital letters in each email. The 58th and last column of the dataset is a categorical variable having each email recorded as "Spam" or "Not Spam". If the email was spam, the email was recorded as a 1. If the email was not spam, it was recorded as a 0. There are 4601 distinct emails in this dataset, with approximately a third of the emails being spam.
 
 **Features Selected for Prediction Function:** The next thing I needed to do was figure out my plan was to answer the question. The way I looked at it was I had a variety of factors including frequency counts of certain words and characters and a binary variable that stated whether the email was spam or not spam. I thought I could take several of the important factors listed and use them to predict if an email would be considered spam or not spam. To do this I had to figure out what the most important characteristics were in deciding whether or not an email would be spam. I had a lot of potential candidates but I decided to throw out a lot of extremely common words and symbols such as "all, or, you, :, #, your, ..." and many others. I spent a good amount of time narrowing it down to these final factors.
-* frequency of word "order" - 
-* frequency of word "mail" -
-* frequency of word "recieve" -
-* frequency of word "free" -
-* frequency of word "business" - 
-* frequency of word "credit" -
-* frequency of word "money" -
-* frequency of char "$" -
+* frequency of word "order" 
+* frequency of word "mail" 
+* frequency of word "recieve" 
+* frequency of word "free" 
+* frequency of word "business" 
+* frequency of word "credit" 
+* frequency of word "money" 
+* frequency of char "$" 
 
 Unfortunately, when I imported the data set from the repository all of the column names were numeric and unordered so I converted the ones I wanted to easier variable names to work with.
 ```R
 > order = as.matrix(dataSet$X0.5)
-> mail = as.matrix(dataSet$0.6)
-Error: unexpected numeric constant in "mail = as.matrix(dataSet$0.6"
 > mail = as.matrix(dataSet$X0.6)
 > recieve = as.matrix(dataSet$X0.7)
 > free = as.matrix(dataSet$X0.32.1)
